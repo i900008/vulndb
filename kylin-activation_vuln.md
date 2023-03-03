@@ -2,7 +2,10 @@
 
 Author: Set3r.Pan（8691003@qq.com）\
 Unit: Kylin Software Co., Ltd.（https://www.kylinos.cn/）
-## report
+
+### CVE ID
+CVE-2023-1164
+## Report
 ### Describe
 
 The kylin-activation package is a component used by Kylin OS for authorization verification and activation. The software package does not strictly restrict the legality of the import file operation, so the directory where the system configuration file is located is imported into an illegal configuration file, resulting in the elevation of local privileges of ordinary users.
