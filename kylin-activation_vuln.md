@@ -31,8 +31,8 @@ echo '[*] Try login with root / 123qwe!@#QWE'
 ### Vuln details
 org.freedesktop.activation::import_auth_file receive files
 
-[](https://raw.githubusercontent.com/i900008/vulndb/main/1.png)
+![1](https://raw.githubusercontent.com/i900008/vulndb/main/1.png)
 
 If the file exists, the service copies the file to /etc, causing arbitrary files to be written in the /etc directory
 
-[](https://raw.githubusercontent.com/i900008/vulndb/main/2.png)
+![1](https://raw.githubusercontent.com/i900008/vulndb/main/2.png)
