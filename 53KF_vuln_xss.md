@@ -1,5 +1,4 @@
-
-## 53KF_vuln_xss
+# 53KF_vuln_xss
 ### CVE ID 
 CVE-2020-28119
 ## Info ：
