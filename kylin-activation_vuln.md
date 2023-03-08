@@ -1,4 +1,4 @@
-# Kylin OS kylin-activation package privilege escalation vulnerability
+# Kylin OS kylin-activation privilege escalation vulnerability
 
 Author: Set3r.Pan（8691003@qq.com）\
 Unit: KylinSoft（https://www.kylinos.cn/）
