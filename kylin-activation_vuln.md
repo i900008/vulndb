@@ -1,7 +1,7 @@
 # Kylin OS privilege escalation vulnerability
 
 Author: Set3r.Pan（8691003@qq.com）\
-Unit: Kylin Software Co., Ltd.（https://www.kylinos.cn/）
+Unit: KylinSoft（https://www.kylinos.cn/）
 
 ### CVE ID
 CVE-2023-1164
