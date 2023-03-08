@@ -31,6 +31,16 @@ dbus-send --system --dest=org.freedesktop.activation /org/freedesktop/activation
 sleep 1
 echo '[*] Try login with root / 123qwe!@#QWE'
 ```
+Run as a low-privileged user on the target OS:
+
+<img width="515" alt="image" src="https://user-images.githubusercontent.com/35441986/223699923-d87d24fe-2cad-4999-983b-d3b76d70624e.png">
+
+First, use the head -n 1 command to check the first line of /etc/passwd and find that it is normal：
+```
+root:x:0:0:root
+```
+Then, after running the exploit.sh script, recheck the content of the first line of /etc/passwd again, and found that it has been exploited successfully, and /etc/passwd has been replaced with the content controlled by the attacker. Then use the account password output by the script, use the su command, and find that the authority has been successfully raised to root authority.
+
 ### Vuln details
 org.freedesktop.activation::import_auth_file receive files
 
@@ -39,3 +49,4 @@ org.freedesktop.activation::import_auth_file receive files
 If the file exists, the service copies the file to /etc, causing arbitrary files to be written in the /etc directory
 
 ![Image](./imgs/CVE-2023-1164_2.png)
+
