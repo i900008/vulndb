@@ -20,7 +20,7 @@ High
 ISO Download:\
 https://distro-images.kylinos.cn:8802/web_pungi/download/share/HXDYtGjZm3daA4UvOTLkiPl1nB9ErM0c/
 
-exp.sh
+exploit.sh
 ```
 echo "[*] Trying to overwrite passwd file ..."
 cp /etc/passwd /tmp/passwd
@@ -44,9 +44,9 @@ Then, after running the exploit.sh script, recheck the content of the first line
 ### Vuln details
 org.freedesktop.activation::import_auth_file receive files
 
-![Image](./imgs/CVE-2023-1164_1.png)
+<img width="700" alt="image" src="./imgs/CVE-2023-1164_1.png">
 
 If the file exists, the service copies the file to /etc, causing arbitrary files to be written in the /etc directory
 
-![Image](./imgs/CVE-2023-1164_2.png)
+<img width="700" alt="image" src="./imgs/CVE-2023-1164_2.png">
 
