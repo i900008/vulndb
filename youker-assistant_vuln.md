@@ -2,6 +2,8 @@
 
 Author: Set3r.Pan（8691003@qq.com）\
 Unit: KylinSoft（https://www.kylinos.cn/）
+### CVE ID
+CVE-2023-2091
 ## Report
 ### Describe
 Youker-assistant is an integrated tool on KylinOS Desktop to help perform daily system maintenance tasks. There is a command injection vulnerability in this component, which may lead to privilege escalation for ordinary users.
