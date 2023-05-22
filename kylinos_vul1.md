@@ -8,8 +8,7 @@ kylin-software-properties is a component on KylinOS Desktop for setting system s
 ### Hazard level
 High
 ### Affected version
-- V10SP1：kylin-software-properties < 0.0.1-134
-- V10：kylin-software-properties < 0.0.1-134
+kylin-software-properties < 0.0.1-130
 ### POC&&EXP
 ISO Download:\
 https://distro-images.kylinos.cn:8802/web_pungi/download/share/HXDYtGjZm3daA4UvOTLkiPl1nB9ErM0c/
