@@ -2,6 +2,8 @@
 
 Author: Set3r.Pan（8691003@qq.com）\
 Unit: KylinSoft（https://www.kylinos.cn/）
+### CVE ID
+CVE-2023-3098
 ## Report
 ### Describe
 youker-assistant is an integrated tool on KylinOS Desktop to help perform daily system maintenance tasks. The restore_all_sound_file in this program has an arbitrary file writing vulnerability, which can lead to privilege escalation for ordinary users.
