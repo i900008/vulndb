@@ -1,5 +1,6 @@
 # Kylin OS kylin-software-properties arbitrary file write vuln
-
+### CVE ID 
+CVE-2023-3096
 Author: Set3r.Pan（8691003@qq.com）\
 Unit: KylinSoft（https://www.kylinos.cn/）
 ## Report
