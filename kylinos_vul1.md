@@ -1,8 +1,8 @@
 # Kylin OS kylin-software-properties arbitrary file write vuln
-### CVE ID 
-CVE-2023-3096
 Author: Set3r.Pan（8691003@qq.com）\
 Unit: KylinSoft（https://www.kylinos.cn/）
+### CVE ID 
+CVE-2023-3096
 ## Report
 ### Describe
 kylin-software-properties is a component on KylinOS Desktop for setting system software properties. There is an arbitrary file writing vulnerability in the changedSource function of this component, which can lead to privilege escalation for ordinary users.
