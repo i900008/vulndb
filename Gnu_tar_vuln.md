@@ -70,14 +70,18 @@ build_tar_gz_2(tar_gz_file, ssh_pubkey)  # Create a tar.gz file containing the S
 ![](./imgs/Gnu_tar_vuln_2.png)
 3、Finally, the attacker can log into the victim's machine through SSH without password.
 ![](./imgs/Gnu_tar_vuln_3.png)
+
+Reproduction video：  
+[Watch the repro video](./imgs/Gnu_tar_vuln_3.mp4)
 ### Attack Exploitation Analysis
 There are two risk points in the tar decompression process:  
 1. Uncontrollable soft links  
 If the tar file contains soft links (symbolic links), any file or directory can be executed across directories. Attackers can use this to create links to important system files or directories.  
 2. File name conflicts  
-During the decompression process, if there is a file with the same file name as the decompressed file, tar will overwrite the existing file. If the file is a soft link, it will directly overwrite the target file or directory pointed to by its soft link.  
+During the decompression process, if there is a file with the same file name as the decompressed file, tar will overwrite the existing file. If the file is a soft link, it will directly overwrite the target file or directory pointed to by its soft link.
+
 An attacker can use the above risk points to attack by making two tar compressed packages:  
-a. Make the first tar package, which contains a soft link to the user's home directory (for example, my_directory);  
-b. Make the second tar package to overwrite the .ssh folder in the user's home directory (for example, my_directory);  
-c. The user decompresses the two packages, first decompresses the first package to create a soft link, and then decompresses the second package to overwrite the .ssh folder;  
-d. The attacker controls the .ssh folder in the home directory through the soft link, and finally obtains the ssh password-free login permission.  
+- a. Make the first tar package, which contains a soft link to the user's home directory (for example, my_directory);  
+- b. Make the second tar package to overwrite the .ssh folder in the user's home directory (for example, my_directory);  
+- c. The user decompresses the two packages, first decompresses the first package to create a soft link, and then decompresses the second package to overwrite the .ssh folder;  
+- d. The attacker controls the .ssh folder in the home directory through the soft link, and finally obtains the ssh password-free login permission.  
