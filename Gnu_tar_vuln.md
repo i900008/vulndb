@@ -9,8 +9,7 @@ High
 Gnu tar < 1.35 
 
 ### POC&&EXP
-explanation： 
-Prerequisites for exploitation: You need to know the SSH username of the other host.  
+poc explanation： 
 1. Modify tar_poc.py  
 Line 12: obj1.linkname = "/home/ubuntu/" # Replace with the actual victim machine home directory path  
 Line 39: ssh_pubkey = "/home/kali/.ssh/id_rsa.pub" # Replace with the actual attack machine's SSH public key path  
