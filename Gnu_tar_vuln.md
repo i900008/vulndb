@@ -11,7 +11,7 @@ Gnu tar < 1.35
 ### POC&&EXP
 poc explanation： 
 1. Modify tar_poc.py  
-Line 12: obj1.linkname = "/home/ubuntu/" # Replace with the actual victim machine home directory path  
+Line 12: obj1.linkname = "../../../../../../../home/ubuntu/" # Replace with the actual victim machine home directory path  
 Line 39: ssh_pubkey = "/home/kali/.ssh/id_rsa.pub" # Replace with the actual attack machine's SSH public key path  
 2. Send the two generated compressed packages to the victim via instant messaging software or other media such as a USB flash drive.(The compressed file can also be filled with some normal files to confuse the other party
 )  
