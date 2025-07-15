@@ -70,7 +70,7 @@ build_tar_gz_2(tar_gz_file, ssh_pubkey)  # Create a tar.gz file containing the S
 ![](./imgs/Gnu_tar_vuln_3.png)
 
 Reproduction video：  
-[Watch the repro video](./imgs/Gnu_tar_vuln_3.mp4)
+[Watch the repro video](./imgs/Gnu_tar_vuln.mp4)
 ### Attack Exploitation Analysis
 There are two risk points in the tar decompression process:  
 1. Uncontrollable soft links  
