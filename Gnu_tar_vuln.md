@@ -1,5 +1,7 @@
 # Gnu tar component has a symbolic link arbitrary file write vulnerability
 ## Report
+### CVE ID
+CVE-2025-45582
 ### Describe
 tar is a file packaging format widely used in Unix and Unix-like systems (such as Linux), which supports processing files or directories containing symbolic links (i.e. soft links). The vulnerability stems from the fact that when tar is decompressed, an attacker can construct a malicious tar package with soft links to implement directory traversal and write arbitrary files, such as creating a ~/.ssh/authorized_keys file, thereby implementing a password-free login attack.
 ### Hazard level
